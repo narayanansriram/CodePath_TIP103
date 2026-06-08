@@ -1,0 +1,32 @@
+def defuse(code, k):
+	res = [0]*len(code)
+	if k==0:
+		return res
+	if k<0:
+		for i in range(len(code)):
+			for j in range(i-1,i+k-1,-1):
+				res[i]+=code[j]
+	if k>0:
+		for i in range(len(code)):
+			for j in range(i+1,i+k+1):
+				res[i]+=code[j%len(code)]
+	return res
+
+# Example Usage:
+code = [5, 7, 1, 4]
+k = 3
+print(defuse(code, k))
+
+code = [1, 2, 3, 4]
+k = 0
+print(defuse(code, k))
+
+code = [2, 4, 9, 3]
+k = -2
+print(defuse(code, k))
+
+# Example Output:
+
+# [12, 10, 16, 13]
+# [0, 0, 0, 0]
+# [12, 5, 6, 13]
