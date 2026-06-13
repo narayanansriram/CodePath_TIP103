@@ -1,5 +1,9 @@
+
 def analyze_library(library_catalog, actual_distribution):
-    pass
+    results = {}
+    for k,v in library_catalog.items():
+        results[k] = actual_distribution[k] - v
+    return results
 
 # Example Usage:
 
