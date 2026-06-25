@@ -1,0 +1,2 @@
+attern(app_logs_2))
+print(find_longest_repeating_p
