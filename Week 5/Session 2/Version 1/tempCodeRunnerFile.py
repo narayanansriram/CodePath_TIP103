@@ -1,0 +1,2 @@
+k):
+		rear = rear.next
