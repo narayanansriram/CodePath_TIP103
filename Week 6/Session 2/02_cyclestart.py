@@ -9,15 +9,18 @@ class Node:
 
 def cycle_start(path_start):
     slow = path_start
-    fast = path_start.next
-    while slow!=fast:
+    fast = path_start
+    while True:
         slow = slow.next
         fast = fast.next.next
-    fast = slow.next
-    while slow!=fast:
-        slow=slow.next
-        fast=fast.next.next
-    return slow.value
+        if slow == fast:
+            break
+    start = path_start
+    while start!=slow:
+        # print(start.value,slow.value)
+        start = start.next
+        slow = slow.next
+    return start.value
 
 # Example Usage:
 

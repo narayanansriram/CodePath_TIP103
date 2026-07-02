@@ -13,10 +13,12 @@ class Node:
 
 def cycle_length(protein):
     slow = protein
-    fast = protein.next
-    while slow!=fast:
+    fast = protein
+    while slow==fast:
         slow = slow.next
         fast = fast.next.next
+        if slow == fast:
+            break
         # print("stuck")
     result = [slow.value]
     fast = slow.next
